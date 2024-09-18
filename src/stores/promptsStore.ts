@@ -9,6 +9,7 @@ export interface Prompt {
 
 export class PromptsStore {
     @observable promptsList: Prompt[] = [];
+    @observable modelAnswer: string = "Result will be here";
 
     constructor() {
         autoBind(this);
@@ -18,5 +19,10 @@ export class PromptsStore {
     @action
     setPromptsList(prompts: Prompt[]) {
         this.promptsList = prompts
+    };
+
+    @action
+    setModelAnswer(answer: string) {
+        this.modelAnswer = answer
     };
 }

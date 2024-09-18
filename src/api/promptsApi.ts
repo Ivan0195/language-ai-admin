@@ -15,3 +15,7 @@ export const removePrompt = (data: {promptId: string}) => {
 export const replacePrompt = (prompt: {id: string, text: string}) => {
    return axios.post('http://localhost:3006/textImprove/replacePrompt', prompt).then(res => res.data)
 }
+
+export const getModelTestAnswer = (data: {prompt: string, text: string}) => {
+   return axios.post('http://localhost:3006/textImprove/testPrompt', data).then(res => res.data)
+}
